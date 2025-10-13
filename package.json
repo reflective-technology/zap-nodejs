@@ -1,6 +1,6 @@
 {
   "name": "@reflective-technology/zap-nodejs",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A lightweight Node.js logger with structured logging and HTTP middleware, designed to match the format and philosophy of go.uber.org/zap.",
   "license": "MIT",
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
