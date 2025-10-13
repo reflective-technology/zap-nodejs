@@ -18,13 +18,13 @@
     "middleware",
     "http-middleware"
   ],
-  "homepage": "https://github.com/Reflective-Technology/zap-nodejs",
+  "homepage": "https://github.com/reflective-technology/zap-nodejs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Reflective-Technology/zap-nodejs.git"
+    "url": "git+https://github.com/reflective-technology/zap-nodejs.git"
   },
   "bugs": {
-    "url": "https://github.com/Reflective-Technology/zap-nodejs/issues"
+    "url": "https://github.com/reflective-technology/zap-nodejs/issues"
   },
   "scripts": {
     "build": "rm -rf dist/ && rollup -c",
