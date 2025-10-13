@@ -33,6 +33,7 @@ jobs:
     if: needs.version.outputs.value != '0.0.0' && needs.version.outputs.tagged == '1'
     permissions:
       contents: write
+      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -46,8 +47,10 @@ jobs:
         run: pnpm install
       - name: Build package
         run: pnpm build
+      - name: Update npm
+        run: npm install -g npm@latest
       - name: Publish package
-        run: npm publish --provenance --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Push tag
