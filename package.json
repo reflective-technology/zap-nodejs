@@ -1,0 +1,20 @@
+{
+  "name": "zap-nodejs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "on-finished": "^2.4.1",
+    "on-headers": "^1.1.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "3.2.4",
+    "vitest": "^3.2.4"
+  }
+}
