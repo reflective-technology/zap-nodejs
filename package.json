@@ -6,6 +6,7 @@
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
   "main": "dist/index.min.js",
   "type": "module",
+  "packageManager": "pnpm@10.18.1",
   "files": [
     "dist"
   ],
@@ -31,8 +32,7 @@
     "coverage": "vitest run --coverage"
   },
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": "18.x || 20.x || 22.x"
   },
   "dependencies": {
     "on-finished": "^2.4.1",
