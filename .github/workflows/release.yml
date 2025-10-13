@@ -8,6 +8,8 @@ on:
 jobs:
   version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       value: ${{ steps.get_version.outputs.value }}
       tagged: ${{ steps.tagged.outputs.tagged }}
