@@ -31,8 +31,7 @@
     "coverage": "vitest run --coverage"
   },
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": "18.x || 20.x || 22.x"
   },
   "dependencies": {
     "on-finished": "^2.4.1",
