@@ -7,7 +7,7 @@ type EnvDefine = {
 const Env: Record<string, EnvDefine> = {
 	"LOG_LEVEL": {
 		"default": 'info',
-		"value": process.env.LOG_LEVEL? process.env.LOG_LEVEL.toLowerCase() : 'info',
+		"value": process.env.LOG_LEVEL?.toLowerCase() || 'info',
 		"allow": ['silent', 'error', 'warn', 'info', 'verbose', 'debug']
 	},
 }

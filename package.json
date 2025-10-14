@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/es/index.js",
   "packageManager": "pnpm@10.18.2",
   "types": "dist/types/index.d.ts",
   "files": [

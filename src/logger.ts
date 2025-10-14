@@ -49,8 +49,8 @@ class Logger {
 		this.cb = cb;
 		for (const level in levels) {
 			if (level === 'silent') continue;
-			// @ts-ignore
-			this[level] = (message: string, args: Record<string, any> = {}) => this.log(level, message, args);
+			// Assign method dynamically with type assertion
+			(this as Record<string, any>)[level] = (message: string, args: Record<string, any> = {}) => this.log(level, message, args);
 		}
 	}
 
