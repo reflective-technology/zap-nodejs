@@ -17,7 +17,7 @@
     "zap",
     "structured-logging",
     "middleware",
-    "http-middleware"
+    "express"
   ],
   "homepage": "https://github.com/reflective-technology/zap-nodejs",
   "repository": {
