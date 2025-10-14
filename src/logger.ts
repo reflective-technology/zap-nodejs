@@ -1,4 +1,4 @@
-import { get } from './env.js';
+import { get } from './env';
 import { relative } from 'path';
 import onFinished from 'on-finished';
 import onHeaders from 'on-headers';
