@@ -18,6 +18,15 @@ importers:
       '@rollup/plugin-terser':
         specifier: ^0.4.4
         version: 0.4.4(rollup@4.52.4)
+      '@types/node':
+        specifier: ^24.7.2
+        version: 24.7.2
+      '@types/on-finished':
+        specifier: ^2.3.5
+        version: 2.3.5
+      '@types/on-headers':
+        specifier: ^1.0.4
+        version: 1.0.4
       '@vitest/coverage-v8':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(@types/node@24.7.2)(terser@5.44.0))
@@ -369,6 +378,12 @@ packages:
 
   '@types/node@24.7.2':
     resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
+
+  '@types/on-finished@2.3.5':
+    resolution: {integrity: sha512-XUaCx9tVIC577KsOZxKbnvGlyPt2ogNXQEq/bOQpAfPwH9sH0FbzrRsK1961jpjKlK5V+Owmw55dVjukWhwH0w==}
+
+  '@types/on-headers@1.0.4':
+    resolution: {integrity: sha512-D8Dy7oiM4fFQPA1TtHVTGPFNgCCYY132dTFLezhvlPiiiyKkuW6tVipPXpUOiuTUu8Kzd+ASKjULvZld197Dhw==}
 
   '@vitest/coverage-v8@3.2.4':
     resolution: {integrity: sha512-EyF9SXU6kS5Ku/U82E259WSnvg6c8KTjppUncuNdm5QHpe17mwREHnjDzozC8x9MZ0xfBUFSaLkRv4TMA75ALQ==}
@@ -1058,7 +1073,14 @@ snapshots:
   '@types/node@24.7.2':
     dependencies:
       undici-types: 7.14.0
-    optional: true
+
+  '@types/on-finished@2.3.5':
+    dependencies:
+      '@types/node': 24.7.2
+
+  '@types/on-headers@1.0.4':
+    dependencies:
+      '@types/node': 24.7.2
 
   '@vitest/coverage-v8@3.2.4(vitest@3.2.4(@types/node@24.7.2)(terser@5.44.0))':
     dependencies:
@@ -1462,8 +1484,7 @@ snapshots:
 
   tinyspy@4.0.4: {}
 
-  undici-types@7.14.0:
-    optional: true
+  undici-types@7.14.0: {}
 
   vite-node@3.2.4(@types/node@24.7.2)(terser@5.44.0):
     dependencies:

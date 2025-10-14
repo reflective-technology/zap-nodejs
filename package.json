@@ -6,7 +6,7 @@
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
   "main": "dist/cjs/index.min.js",
   "module": "dist/esm/index.min.js",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.18.2",
   "files": [
     "dist"
   ],
@@ -40,6 +40,9 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^24.7.2",
+    "@types/on-finished": "^2.3.5",
+    "@types/on-headers": "^1.0.4",
     "@vitest/coverage-v8": "3.2.4",
     "rollup": "^4.52.4",
     "vitest": "^3.2.4"

@@ -37,7 +37,7 @@ describe('Logger', () => {
 	it('should log HTTP request when response finishes', () => {
 		const logger = new Logger(logSpy, 4)
 		logger.setLevel('verbose')
-		const middleware = logger.http()
+		const middleware = logger.express()
 
 		// mock req, res, next
 		const req = { method: 'GET', url: '/test', _startAt: undefined }
@@ -76,5 +76,12 @@ describe('Logger', () => {
 		expect(logObj.status).toBe(200)
 		expect(logObj.method).toBe('GET')
 		expect(logObj.url).toBe('/test')
+	})
+
+	it('should not log when level is silent', () => {
+		const logger = new Logger(logSpy, 4)
+		logger.setLevel('silent')
+		logger.error('Should not log')
+		expect(logSpy).not.toHaveBeenCalled()
 	})
 })
