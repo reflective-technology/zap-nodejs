@@ -71,7 +71,7 @@ class Logger {
 		}
 		/* v8 ignore stop */
 		const line = match[2];
-		regex = /(\/[a-zA-Z].*\.js)/
+		regex = /(\/[a-zA-Z].*\.(js|ts))/
 		match = regex.exec(match[1]);
 		if (!match) {
 			return "unknown:0";
