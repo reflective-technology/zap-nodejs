@@ -4,9 +4,10 @@
   "description": "A lightweight Node.js logger with structured logging and HTTP middleware, designed to match the format and philosophy of go.uber.org/zap.",
   "license": "MIT",
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
-  "main": "dist/cjs/index.min.js",
-  "module": "dist/esm/index.min.js",
-  "packageManager": "pnpm@10.18.1",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "packageManager": "pnpm@10.18.2",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -27,7 +28,7 @@
     "url": "https://github.com/reflective-technology/zap-nodejs/issues"
   },
   "scripts": {
-    "build": "rm -rf dist/ && rollup -c",
+    "build": "rm -rf dist/cjs && rollup -c && tsc --emitDeclarationOnly --declaration --declarationMap --outDir dist/types",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -40,8 +41,14 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/node": "^24.7.2",
+    "@types/on-finished": "^2.3.5",
+    "@types/on-headers": "^1.0.4",
     "@vitest/coverage-v8": "3.2.4",
     "rollup": "^4.52.4",
+    "rollup-plugin-dts": "^6.2.3",
+    "tslib": "^2.8.1",
     "vitest": "^3.2.4"
   },
   "publishConfig": {
