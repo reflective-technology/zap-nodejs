@@ -1,6 +1,6 @@
 # @reflective-technology/zap-nodejs
 
-A lightweight Node.js logger with structured logging and HTTP middleware, designed to match the format and philosophy of [go.uber.org/zap](https://go.uber.org/zap).
+A lightweight Node.js logger with structured logging and Express middleware, designed to match the format and philosophy of [go.uber.org/zap](https://go.uber.org/zap).
 
 ## Features
 
