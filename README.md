@@ -40,7 +40,7 @@ import express from 'express'
 const app = express()
 const logger = new Logger()
 
-app.use(logger.http())
+app.use(logger.express())
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')
@@ -68,9 +68,9 @@ app.listen(3000, () => {
 - `logger.error(message, fields)`: Logs an error message.
 - `logger.setLevel(level)`: Sets the minimum log level.
 
-### HTTP Middleware
+### Express Middleware
 
-#### `logger.http()`
+#### `logger.express()`
 
 Returns an Express middleware function that logs HTTP requests and responses.
 
