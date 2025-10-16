@@ -40,7 +40,7 @@ import express from 'express'
 const app = express()
 const logger = new Logger()
 
-app.use(logger.http())
+app.use(logger.express())
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')

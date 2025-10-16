@@ -1,8 +1,8 @@
 import { get } from './env';
-import { relative } from 'path';
+import { relative } from 'node:path';
 import onFinished from 'on-finished';
 import onHeaders from 'on-headers';
-import type http from 'http';
+import type http from 'node:http';
 
 type RequestWithStartAt = http.IncomingMessage & { _startAt?: [number, number] };
 type ResponseWithStartAt = http.ServerResponse & { _startAt?: [number, number] };
@@ -56,7 +56,7 @@ class Logger {
 
 	// Get the file and line number of the caller
 	private line(num: number): string {
-		const e = new Error();
+		const e = new Error('get stack');
 		const stack = e.stack;
 		/* v8 ignore start */
 		if (!stack) {
@@ -73,9 +73,11 @@ class Logger {
 		const line = match[2];
 		regex = /(\/[a-zA-Z].*\.(js|ts))/
 		match = regex.exec(match[1]);
+		/* v8 ignore start */
 		if (!match) {
 			return "unknown:0";
 		}
+		/* v8 ignore stop */
 		const filepath = match[1];
 		const fileName = relative(process.cwd(), filepath);
 		return `${fileName}:${line}`;
@@ -87,7 +89,7 @@ class Logger {
 		}
 		this.cb(JSON.stringify({
 			level,
-			ts: Math.floor(new Date().getTime() / 1000),
+			ts: Math.floor(Date.now() / 1000),
 			message: message,
 			caller: this.line(this.line_num),
 			...args,
@@ -106,8 +108,7 @@ class Logger {
 	 * Express middleware to log HTTP requests and responses.
 	 * Logs the method, URL, status code, and response time for each request.
 	 */
-	express() {
-		const logger = this;
+	express(level: string = 'verbose') {
 		return (req: RequestWithStartAt, res: ResponseWithStartAt, next: Function) => {
 			// request data
 			req._startAt = process.hrtime()
@@ -117,7 +118,7 @@ class Logger {
 
 			const logRequest = () => {
 				let responseTime = getResponseTime(req, res)
-				logger.verbose("received request", {
+				this.log(level, "received request", {
 					status: res.statusCode,
 					responseTime: responseTime,
 					method: req.method,
