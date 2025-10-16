@@ -68,9 +68,9 @@ app.listen(3000, () => {
 - `logger.error(message, fields)`: Logs an error message.
 - `logger.setLevel(level)`: Sets the minimum log level.
 
-### HTTP Middleware
+### Express Middleware
 
-#### `logger.http()`
+#### `logger.express()`
 
 Returns an Express middleware function that logs HTTP requests and responses.
 

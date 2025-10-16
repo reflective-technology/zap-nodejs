@@ -105,8 +105,9 @@ class Logger {
 	}
 
 	/**
-	 * Express middleware to log HTTP requests and responses.
-	 * Logs the method, URL, status code, and response time for each request.
+	 * Express middleware for logging HTTP requests and responses.
+	 * @param level - The logging level to use for the requests (default is 'verbose').
+	 * @returns An Express middleware function.
 	 */
 	express(level: string = 'verbose') {
 		return (req: RequestWithStartAt, res: ResponseWithStartAt, next: Function) => {
