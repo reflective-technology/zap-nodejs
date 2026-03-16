@@ -6,7 +6,6 @@
   "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "packageManager": "pnpm@10.18.2",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
@@ -40,7 +39,7 @@
     "on-headers": "^1.1.0"
   },
   "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.1.4",
     "@types/node": "^24.7.2",
     "@types/on-finished": "^2.3.5",
