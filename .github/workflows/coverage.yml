@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Use Node.js version 22.x
+      - name: Use Node.js version 24.x
         uses: actions/setup-node@v5
         with:
-          node-version: 22.x
+          node-version: 24.x
       - run: npm i
       - run: npm run coverage
         env:

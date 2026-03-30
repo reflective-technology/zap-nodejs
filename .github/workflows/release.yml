@@ -15,7 +15,7 @@ jobs:
       tagged: ${{ steps.tagged.outputs.tagged }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           fetch-depth: 0
       - name: Extract version from package.json
@@ -40,11 +40,11 @@ jobs:
       id-token: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
-      - name: Use Node.js version 22.x
-        uses: actions/setup-node@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Use Node.js version 24.x
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
-          node-version: 22.x
+          node-version: 24.x
       - name: Install dependencies
         run: npm install
       - name: Build package
