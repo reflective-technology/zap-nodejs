@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "A lightweight Node.js logger with structured logging and Express middleware, designed to match the format and philosophy of go.uber.org/zap.",
   "license": "MIT",
-  "author": "Reflective Technology RD Team <rd@cybereyes.ai> (https://www.cybereyes.ai)",
+  "author": "Reflective Technology RD Team <rd@zuin.ai> (https://www.zuin.ai)",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
