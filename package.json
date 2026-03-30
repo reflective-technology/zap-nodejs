@@ -41,7 +41,7 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.1.4",
-    "@types/node": "^24.7.2",
+    "@types/node": "^25.5.0",
     "@types/on-finished": "^2.3.5",
     "@types/on-headers": "^1.0.4",
     "@vitest/coverage-v8": "4.1.2",
