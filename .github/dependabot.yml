@@ -22,6 +22,9 @@ updates:
         applies-to: version-updates
         patterns:
           - "*"
+        exclude-patterns:
+          - "vitest"
+          - "@vitest/*"
         update-types:
           - "minor"
           - "patch"
