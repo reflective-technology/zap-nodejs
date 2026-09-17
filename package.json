@@ -44,11 +44,11 @@
     "@types/node": "^24.1.0",
     "@types/on-finished": "^2.3.5",
     "@types/on-headers": "^1.0.4",
-    "@vitest/coverage-v8": "4.1.11",
+    "@vitest/coverage-v8": "5.0.0",
     "rollup": "^4.52.4",
     "rollup-plugin-dts": "^6.2.3",
     "tslib": "^2.8.1",
-    "vitest": "^4.1.2"
+    "vitest": "^5.0.0"
   },
   "publishConfig": {
     "provenance": true
