@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
 	test: {
 		environment: 'node',
-		include: ['tests/**/*.test.js'],
+		include: ['tests/**/*.test.ts'],
 		coverage: {
 			// you can include other reporters, but 'json-summary' is required, json is recommended
 			reporter: ['text', 'json-summary', 'json'],
