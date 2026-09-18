@@ -12,15 +12,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-      - name: Use Node.js version 24.x
-        uses: actions/setup-node@v7
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: 24.x
-      - run: npm i
-      - run: npm run coverage
+          cache: "npm"
+      - name: Install dependencies
+        run: npm i
+      - name: Run coverage
+        run: npm run coverage
         env:
           CI: true
       - name: "Report Coverage"
         if: always()
-        uses: davelosert/vitest-coverage-report-action@c4bbc33a89b7ace0e63d35f1f7d4bcee31155a73 # v2.13.0
+        uses: davelosert/vitest-coverage-report-action@c4bbc33a89b7ace0e63d35f1f7d4bcee31155a73
