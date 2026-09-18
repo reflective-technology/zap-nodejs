@@ -2,10 +2,8 @@ import { get } from './env';
 import { relative } from 'node:path';
 import onFinished from 'on-finished';
 import onHeaders from 'on-headers';
-import type http from 'node:http';
+import type { RequestWithStartAt, ResponseWithStartAt } from './types';
 
-type RequestWithStartAt = http.IncomingMessage & { _startAt?: [number, number] };
-type ResponseWithStartAt = http.ServerResponse & { _startAt?: [number, number] };
 const levels: Record<string, number> = {
 	silent: 0,
 	error: 1,
