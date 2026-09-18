@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import Logger from '../src'
 
+vi.mock('on-headers', () => ({
+	default: (res, cb) => res._onHeaders(cb)
+}))
+vi.mock('on-finished', () => ({
+	default: (res, cb) => res._onFinished(cb)
+}))
+
 describe('Logger', () => {
 	let logSpy
 
@@ -50,14 +57,6 @@ describe('Logger', () => {
 		// Simulate onFinished behavior
 		let onFinishedCallback
 		res._onFinished = (cb) => { onFinishedCallback = cb }
-
-		// Mock on-headers and on-finished
-		vi.mock('on-headers', () => ({
-			default: (res, cb) => res._onHeaders(cb)
-		}))
-		vi.mock('on-finished', () => ({
-			default: (res, cb) => res._onFinished(cb)
-		}))
 
 		// Run middleware
 		middleware(req, res, next)
