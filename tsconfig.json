@@ -10,5 +10,5 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "nodenext"
   },
-  "include": ["src"]
+  "include": ["src", "tests"]
 }
