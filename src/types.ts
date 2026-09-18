@@ -1,6 +1,6 @@
 import type http from 'node:http';
 
-type RequestWithStartAt = http.IncomingMessage & { _startAt?: [number, number] };
-type ResponseWithStartAt = http.ServerResponse & { _startAt?: [number, number] };
+type TRequestWithStartAt = http.IncomingMessage & { _startAt?: [number, number] };
+type TResponseWithStartAt = http.ServerResponse & { _startAt?: [number, number] };
 
-export type { RequestWithStartAt, ResponseWithStartAt };
+export type { TRequestWithStartAt as RequestWithStartAt, TResponseWithStartAt as ResponseWithStartAt };
