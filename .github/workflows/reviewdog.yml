@@ -1,0 +1,33 @@
+name: "Reviewdog"
+on:
+  pull_request:
+    branches: ["main"]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  detect-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Run detect-secrets
+        uses: reviewdog/action-detect-secrets@aa401448f8afc3c826140059b40e614b8ae0081b
+        with:
+          reporter: "github-pr-review"
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: 24.x
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESLint
+        uses: reviewdog/action-eslint@5eb89b1e6e94ca33e91c3814c34b25a8370bba46
+        with:
+          reporter: "github-pr-review"
