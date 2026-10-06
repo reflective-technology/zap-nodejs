@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run detect-secrets
-        uses: reviewdog/action-detect-secrets@3bc07a8ce36864e49536f7dba77f7c69ff5219a3
+        uses: reviewdog/action-detect-secrets@53195a798553d71f8d0884ab7335aa5ac42e73e9
         with:
           reporter: "github-pr-review"
   eslint:
@@ -28,6 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run ESLint
-        uses: reviewdog/action-eslint@b6303df522851d0e9abaea654da0222037d97e75
+        uses: reviewdog/action-eslint@3ee2a450da17e060b9dfa4bffd53976906c6b2b0
         with:
           reporter: "github-pr-review"
