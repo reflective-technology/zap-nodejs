@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Run detect-secrets
-        uses: reviewdog/action-detect-secrets@53195a798553d71f8d0884ab7335aa5ac42e73e9
+        uses: reviewdog/action-detect-secrets@8eeb4956ce5c9f4bebff8e21fd31066a9a011c4c
         with:
           reporter: "github-pr-review"
   eslint:
